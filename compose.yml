@@ -1,0 +1,34 @@
+services:
+  macos:
+    image: dockurr/macos
+    container_name: hackintosh
+    networks:
+      - cloudflare_cloudflared
+    environment:
+      VERSION: "11"
+      CPU_CORES: "16"
+      RAM_SIZE: "60G"
+      DISK_SIZE: "256G"
+      WIDTH: "1680"
+      HEIGHT: "1050"
+      GPU: "Y"
+    devices:
+      - /dev/kvm
+      - /dev/net/tun
+      - /dev/dri
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 5900:5900/tcp
+      - 5900:5900/udp
+    volumes:
+      - data:/storage:rw
+    stop_grace_period: 5m
+
+volumes:
+  data:
+
+networks:
+  cloudflare_cloudflared:
+    external: true

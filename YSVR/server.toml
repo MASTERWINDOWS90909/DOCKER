@@ -1,0 +1,18 @@
+[server]
+host = "0.0.0.0"
+port = 8080
+timeout = 30
+
+[network]
+max_connections = 100
+buffer_size = 4096
+keep_alive = true
+
+[tls]
+enabled = true
+cert_path = "/YSVR/server.crt"
+key_path = "/YSVR/server.key"
+
+[logging]
+level = "info"
+format = "json"

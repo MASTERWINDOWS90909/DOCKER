@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=bash,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false
+}
+
+\title{Safari Browser Startup Script}
+\author{Generated Documentation}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+This document describes a startup script for Apple Safari browser automation.
+
+\section{Bash Startup Script}
+
+\begin{lstlisting}
+#!/bin/bash
+
+# Safari Browser Startup Script
+# Purpose: Launch Safari with specified configurations
+
+SAFARI_PATH="/Applications/Safari.app/Contents/MacOS/Safari"
+DEFAULT_URL="https://www.apple.com"
+
+# Function to open Safari
+open_safari() {
+        local url="${1:-$DEFAULT_URL}"
+        
+        if [ -x "$SAFARI_PATH" ]; then
+                open -a Safari "$url"
+                echo "Safari launched with URL: $url"
+        else
+                echo "Error: Safari not found at $SAFARI_PATH"
+                exit 1
+        fi
+}
+
+# Main execution
+main() {
+        open_safari "$@"
+}
+
+main "$@"
+\end{lstlisting}
+
+\section{Usage}
+\begin{itemize}
+        \item Run with default URL: \texttt{./safari-startup.sh}
+        \item Run with custom URL: \texttt{./safari-startup.sh https://example.com}
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,50 @@
+# AMD GPU Properties Configuration
+
+[gpu]
+vendor = "AMD"
+driver = "amdgpu"
+description = "AMD Graphics Processing Unit Configuration"
+
+[device]
+# AMD GPU device identifiers
+device_name = "AMD RDNA/RDNA2"
+bus_type = "PCIe"
+compute_capability = "RDNA"
+
+[memory]
+# Memory configuration in MB
+vram_gb = 8
+memory_type = "GDDR6"
+memory_bandwidth_gbps = 448
+
+[performance]
+# Clock speeds in MHz
+base_clock_mhz = 2500
+boost_clock_mhz = 2800
+tmu_count = 128
+rom_count = 256
+
+[compute]
+# Compute specifications
+shader_units = 2560
+stream_processors = 2560
+texture_units = 160
+render_output_units = 64
+max_threads_per_block = 1024
+warp_size = 64
+
+[software]
+# Software and driver settings
+supported_apis = ["HIP", "OpenCL", "Vulkan", "OpenGL"]
+min_driver_version = "5.15"
+rocm_supported = true
+rocm_version = "5.7"
+
+[power]
+# Power consumption
+tdp_watts = 250
+power_connectors = ["PCIe_6pin", "PCIe_8pin"]
+
+[cooling]
+fan_type = "dual_axial"
+max_temp_celsius = 110

@@ -1,0 +1,34 @@
+# AMD Virtual GPU Configuration
+
+[device]
+name = "AMD vGPU"
+vendor_id = "0x1002"  # AMD Vendor ID
+device_type = "discrete_gpu"
+enabled = true
+
+[memory]
+total_vram_mb = 4096
+reserved_mb = 512
+dynamic_allocation = true
+
+[performance]
+clock_speed_mhz = 1500
+memory_clock_mhz = 1000
+power_limit_watts = 150
+thermal_limit_celsius = 85
+
+[features]
+ray_tracing = true
+hardware_encoding = true
+hardware_decoding = true
+shared_memory = true
+
+[driver]
+version = "latest"
+auto_update = true
+compatibility_mode = "rocm"
+
+[virtualization]
+max_vms = 4
+migration_enabled = true
+checkpoint_enabled = true

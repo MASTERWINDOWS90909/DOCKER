@@ -1,0 +1,29 @@
+tex language
+uage=
+\documentclass{article}
+\usepackage[utf-8]{inputenc}
+
+\title{Google Chrome Base App Configuration}
+\author{}
+\date{}
+
+\begin{document}
+
+\section*{Chrome Application Setup}
+
+\subsection*{Dependencies}
+\begin{itemize}
+    \item google-chrome-stable
+    \item xvfb (for headless mode)
+\end{itemize}
+
+\subsection*{Installation}
+\texttt{apt update \&\& apt install -y google-chrome-stable}
+
+\subsection*{Configuration}
+Chrome startup flags and environment variables for containerized deployment.
+
+\subsection*{Entry Point}
+\texttt{google-chrome --no-sandbox --disable-gpu \$@}
+
+\end{document}

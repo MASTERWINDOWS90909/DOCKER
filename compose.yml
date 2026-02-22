@@ -3,9 +3,9 @@ services:
     image: dockurr/macos
     container_name: maXCS
     environment:
-      VERSION: "MACOS-VERSION"
+      VERSION: "26"
       CPU_CORES: "16"
-      RAM_SIZE: "60G"
+      RAM_SIZE: "59G"
       DISK_SIZE: "256G"
       WIDTH: "1680"
       HEIGHT: "1050"

@@ -1,0 +1,12 @@
+# Disk images
+*.dmg
+*.img
+*.rom
+*.vars
+
+# Certificates & keys
+*.key
+*.crt
+
+# MacOS build folder
+macos/
